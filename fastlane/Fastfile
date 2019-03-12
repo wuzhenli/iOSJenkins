@@ -33,7 +33,7 @@ platform :ios do
 	  time = Time.new.strftime("%Y%m%d") #获取时间格式
     version = get_version_number#获取版本号
     auto_increment_build_number = increment_build_number # 自动增加 build 号 + 1
-	  build_number = get_build_number(xcodeproj: "#{ProjectName}.xcworkspace")
+	  build_number = auto_increment_build_number # get_build_number(xcodeproj: "#{ProjectName}.xcodeproj")
 	  # puts 输出日志到终端, 并且指定颜色
 	  puts "auto_increment_build_number:#{auto_increment_build_number}  fileBuildNum:#{build_number}".green
     ipaName = "#{configuration}_#{version}_#{build_number}_#{time}.ipa"
