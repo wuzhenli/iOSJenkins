@@ -21,7 +21,7 @@ platform :ios do
 
   desc "Description of what the lane does"
   lane :beta do  #函数名称，执行打包的时候使用
-	  ProjectName = 'testBugly' # 项目名称
+	  ProjectName = 'iOSJenkins' # 项目名称
 
   	# Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
     export_method = 'development'
