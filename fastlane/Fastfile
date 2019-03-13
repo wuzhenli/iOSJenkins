@@ -42,7 +42,8 @@ platform :ios do
        export_method:export_method,#打包的类型
        configuration:configuration, 
        output_name:"#{ipaName}",#输出的包名
-       output_directory:"./build"#输出的位置
+       output_directory:"./build", #输出的位置
+       xcargs: "-allowProvisioningUpdates",
      )
 
     # build_app(export_method: export_method)
