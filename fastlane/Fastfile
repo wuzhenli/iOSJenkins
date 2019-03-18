@@ -38,8 +38,16 @@ platform :ios do
 	  puts "auto_increment_build_number:#{auto_increment_build_number}  fileBuildNum:#{build_number}".green
     ipaName = "#{configuration}_#{version}_#{build_number}_#{time}.ipa"
 
+    
+    work_path = File.expand_path("..", Dir.pwd)
+    puts "dir.pwd:#{Dir.pwd}" # dir.pwd:/Users/li/PrivateText/GitHub-Demo/iOSJenkins/fastlane
+    puts "work_path:#{work_path}" # work_path:/Users/li/PrivateText/GitHub-Demo/iOSJenkins
+    plist_path = "#{work_path}/iOSJenkins/Info.plist"
+
+    bundle_id = get_info_plist_value(path: "#{plist_path}", key: "CFBundleIdentifier")
+    puts "bunlle ID:#{bundle_id}".red
     # match  alias for "sync_code_signing"
-    sync_code_signing(type: "development", readonly: true)
+    # sync_code_signing(type: "development", readonly: true)
 
     # get_certificates(  # cert  alias for "get_certificates"
     #   development: true
@@ -52,13 +60,18 @@ platform :ios do
     #   filename: "iOSJenkins.mobileprovision"
     # )
     
-    gym(
+    gym( # alias for "build_ios_app"
        scheme:scheme, 
        export_method:export_method,#打包的类型
        configuration:configuration, 
        output_name:"#{ipaName}",#输出的包名
        output_directory:"./build", #输出的位置
        xcargs: "-allowProvisioningUpdates",
+       export_options: {
+          provisioningProfiles: { 
+              "#{bundle_id}" => "iOSJenkins"
+          }
+        }
      )
 
     # build_app(export_method: export_method)
