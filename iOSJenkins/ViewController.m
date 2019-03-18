@@ -24,7 +24,7 @@
 //    NSOrderedSetcd
     NSLog(@"success");
     NSLog(@"+++");
-    self.label.text = @"3月18日第一次提交";
+    self.label.text = @"3月18日第一次提交，第二次提交，第三次提交";
 }
 
 

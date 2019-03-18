@@ -37,6 +37,17 @@ platform :ios do
 	  # puts 输出日志到终端, 并且指定颜色
 	  puts "auto_increment_build_number:#{auto_increment_build_number}  fileBuildNum:#{build_number}".green
     ipaName = "#{configuration}_#{version}_#{build_number}_#{time}.ipa"
+
+    get_certificates(  # cert  alias for "get_certificates"
+      development: true
+      # username: "user@email.com" # Your Apple ID Username
+    )
+    get_provisioning_profile(  # sigh  alias for "get_provisioning_profile"
+      development: true,
+      # adhoc: false,
+      force: true,
+      filename: "iOSJenkins.mobileprovision"
+    )
     gym(
        scheme:scheme, 
        export_method:export_method,#打包的类型
