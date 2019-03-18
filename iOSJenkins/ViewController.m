@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -23,7 +24,7 @@
 //    NSOrderedSetcd
     NSLog(@"success");
     NSLog(@"+++");
-    
+    self.label.text = @"3月18日第一次提交";
 }
 
 
