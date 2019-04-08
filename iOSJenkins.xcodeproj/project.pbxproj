@@ -536,8 +536,9 @@
 			baseConfigurationReference = 4CCF53BD99519532CC604657 /* Pods-iOSJenkins.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 294Q8452TK;
 				INFOPLIST_FILE = iOSJenkins/Info.plist;
@@ -547,7 +548,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.6rooms.www.testBugly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.6rooms.www.testBugly";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -558,9 +559,10 @@
 			baseConfigurationReference = F40F3DE307DB70A3689CEEFD /* Pods-iOSJenkins.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 23;
+				DEVELOPMENT_TEAM = 294Q8452TK;
 				INFOPLIST_FILE = iOSJenkins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

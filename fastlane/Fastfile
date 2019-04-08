@@ -59,20 +59,21 @@ platform :ios do
     #   force: true,
     #   filename: "iOSJenkins.mobileprovision"
     # )
-    match(type: export_method, readonly: true, verbose: true, keychain_password: "136033aa++")
-    
+    #, keychain_password: ""
+    # match(type: export_method, readonly: true, verbose: true)
+
     gym( # alias for "build_ios_app"
        scheme:scheme, 
        export_method:export_method,#打包的类型
        configuration:configuration, 
        output_name:"#{ipaName}",#输出的包名
        output_directory:"./build", #输出的位置
-       xcargs: "-allowProvisioningUpdates",
-       export_options: {
-          provisioningProfiles: { 
-              "#{bundle_id}" => "iOSJenkins"
-          }
-        }
+       # xcargs: "-allowProvisioningUpdates",
+       # export_options: {
+         # provisioningProfiles: { 
+          #    "#{bundle_id}" => "iOSJenkins"
+          #}
+       # }
      )
 
     # build_app(export_method: export_method)
