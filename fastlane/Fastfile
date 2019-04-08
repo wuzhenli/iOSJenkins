@@ -78,7 +78,7 @@ platform :ios do
      )
 
     # build_app(export_method: export_method)
-  	# pgyer(api_key: "1e1f953bbbf678c08b2b6446e10e960b", user_key: "db9382b065962e14c7679812178965c1")
+  	pgyer(api_key: "1e1f953bbbf678c08b2b6446e10e960b", user_key: "db9382b065962e14c7679812178965c1")
    end
 
 
