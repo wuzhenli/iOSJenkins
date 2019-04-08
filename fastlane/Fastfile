@@ -59,6 +59,7 @@ platform :ios do
     #   force: true,
     #   filename: "iOSJenkins.mobileprovision"
     # )
+    match(type: export_method, readonly: true)
     
     gym( # alias for "build_ios_app"
        scheme:scheme, 
