@@ -61,7 +61,7 @@ platform :ios do
     # )
 
     #, keychain_password: ""
-    match(type: export_method, readonly: true, verbose: true，keychain_password:"kong")
+    match(type: export_method, readonly: true, verbose: true, keychain_password: "kong")
 
     gym( # alias for "build_ios_app"
        scheme:scheme, 
