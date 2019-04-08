@@ -60,21 +60,21 @@ platform :ios do
     #   filename: "iOSJenkins.mobileprovision"
     # )
     #, keychain_password: ""
-    # match(type: export_method, readonly: true, verbose: true)
+    match(type: export_method, readonly: true, verbose: true)
 
-#    gym( # alias for "build_ios_app"
-#       scheme:scheme, 
-#       export_method:export_method,#打包的类型
-#       configuration:configuration, 
-#       output_name:"#{ipaName}",#输出的包名
-#       output_directory:"./build", #输出的位置
-#       # xcargs: "-allowProvisioningUpdates",
-#       # export_options: {
-#         # provisioningProfiles: { 
-#          #    "#{bundle_id}" => "iOSJenkins"
-#          #}
-#       # }
-#     )
+    gym( # alias for "build_ios_app"
+       scheme:scheme, 
+       export_method:export_method,#打包的类型
+       configuration:configuration, 
+       output_name:"#{ipaName}",#输出的包名
+       output_directory:"./build", #输出的位置
+       # xcargs: "-allowProvisioningUpdates",
+       # export_options: {
+         # provisioningProfiles: { 
+          #    "#{bundle_id}" => "iOSJenkins"
+          #}
+       # }
+     )
 
     # build_app(export_method: export_method)
   	# pgyer(api_key: "1e1f953bbbf678c08b2b6446e10e960b", user_key: "db9382b065962e14c7679812178965c1")
