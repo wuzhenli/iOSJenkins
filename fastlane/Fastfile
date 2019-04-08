@@ -35,7 +35,7 @@ platform :ios do
     auto_increment_build_number = increment_build_number # 自动增加 build 号 + 1
 	  build_number = auto_increment_build_number # get_build_number(xcodeproj: "#{ProjectName}.xcodeproj")
 	  # puts 输出日志到终端, 并且指定颜色
-	  puts "auto_increment_build_number:#{auto_increment_build_number}  fileBuildNum:#{build_number}".green
+	  puts "************   auto_increment_build_number:#{auto_increment_build_number}  fileBuildNum:#{build_number}".yellow
     ipaName = "#{configuration}_#{version}_#{build_number}_#{time}.ipa"
 
     
@@ -60,7 +60,7 @@ platform :ios do
     #   filename: "iOSJenkins.mobileprovision"
     # )
     #, keychain_password: ""
-    # match(type: export_method, readonly: true, verbose: true)
+    match(type: export_method, readonly: true, verbose: true)
 
     gym( # alias for "build_ios_app"
        scheme:scheme, 
@@ -77,7 +77,7 @@ platform :ios do
      )
 
     # build_app(export_method: export_method)
-  	pgyer(api_key: "1e1f953bbbf678c08b2b6446e10e960b", user_key: "db9382b065962e14c7679812178965c1")
+  	# pgyer(api_key: "1e1f953bbbf678c08b2b6446e10e960b", user_key: "db9382b065962e14c7679812178965c1")
    end
 
 
