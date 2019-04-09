@@ -52,7 +52,7 @@ platform :ios do
 
   desc "Description of what the lane does"
   lane :beta do  #函数名称，执行打包的时候使用
-	  ProjectName = ENV['SCHEME'] # 项目名称 'iOSJenkins'
+	  ProjectName = 'iOSJenkins' #ENV['SCHEME'] # 项目名称 'iOSJenkins'
 
   	# Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
     export_method = 'development'
@@ -80,21 +80,7 @@ platform :ios do
 
     bundle_id = get_info_plist_value(path: "#{plist_path}", key: "CFBundleIdentifier")
     puts "bunlle ID:#{bundle_id}".red
-    # match  alias for "sync_code_signing"
-    # sync_code_signing(type: "development", readonly: true)
-
-    # get_certificates(  # cert  alias for "get_certificates"
-    #   development: true
-    #   # username: "user@email.com" # Your Apple ID Username
-    # )
-    # get_provisioning_profile(  # sigh  alias for "get_provisioning_profile"
-    #   development: true,
-    #   # adhoc: false,
-    #   force: true,
-    #   filename: "iOSJenkins.mobileprovision"
-    # )
-
-    #, keychain_password: ""
+   
     match(type: export_method, readonly: true, verbose: true)
 #    match(type: export_method, app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"], verbose: true)
     puts "**************************   before build ***********************"
@@ -107,7 +93,8 @@ platform :ios do
         xcargs: "-allowProvisioningUpdates",
         export_options: {
           provisioningProfiles: { 
-              ENV['BUNDLE_IDENTIFIER'] => ENV['PROVISION_NAME_ADHOC'] #ENV['PROVISION_NAME_APPSTORE']
+            "#{bundle_id}" => ProjectName
+              # ENV['BUNDLE_IDENTIFIER'] => ENV['PROVISION_NAME_ADHOC'] #ENV['PROVISION_NAME_APPSTORE']
           }
         }
      )
