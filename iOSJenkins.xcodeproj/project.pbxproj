@@ -15,6 +15,9 @@
 		0A13FC3921EDAA02004636EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13FC3821EDAA02004636EB /* main.m */; };
 		0A13FC4321EDAA02004636EB /* iOSJenkinsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13FC4221EDAA02004636EB /* iOSJenkinsTests.m */; };
 		0A13FC4E21EDAA02004636EB /* iOSJenkinsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13FC4D21EDAA02004636EB /* iOSJenkinsUITests.m */; };
+		0A44365A225C6A050092CB63 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A443659225C6A050092CB63 /* ShareViewController.m */; };
+		0A44365D225C6A050092CB63 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A44365B225C6A050092CB63 /* MainInterface.storyboard */; };
+		0A443661225C6A050092CB63 /* shareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A443656225C6A040092CB63 /* shareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		50A599071618C75310A28D1E /* libPods-iOSJenkins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FF4A40237D4F839E6CB689 /* libPods-iOSJenkins.a */; };
 		AB753CEA25865839EB8A334E /* libPods-iOSJenkinsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2D4B82B371DA00AD6C624 /* libPods-iOSJenkinsTests.a */; };
 		D98EE50CA06AD9B14F0D488F /* libPods-iOSJenkinsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E880653F036A084695209BA /* libPods-iOSJenkinsUITests.a */; };
@@ -35,6 +38,13 @@
 			remoteGlobalIDString = 0A13FC2521EDAA01004636EB;
 			remoteInfo = iOSJenkins;
 		};
+		0A44365F225C6A050092CB63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A13FC1E21EDAA01004636EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A443655225C6A040092CB63;
+			remoteInfo = shareExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				0A443661225C6A050092CB63 /* shareExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +79,11 @@
 		0A13FC4921EDAA02004636EB /* iOSJenkinsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSJenkinsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A13FC4D21EDAA02004636EB /* iOSJenkinsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSJenkinsUITests.m; sourceTree = "<group>"; };
 		0A13FC4F21EDAA02004636EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A443656225C6A040092CB63 /* shareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = shareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A443658225C6A050092CB63 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		0A443659225C6A050092CB63 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		0A44365C225C6A050092CB63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0A44365E225C6A050092CB63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EAC4EF7BA8514054CE4ACC2 /* Pods-iOSJenkinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSJenkinsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSJenkinsTests/Pods-iOSJenkinsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		21573D30515B6AE2DE938B17 /* Pods-iOSJenkinsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSJenkinsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSJenkinsTests/Pods-iOSJenkinsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4CCF53BD99519532CC604657 /* Pods-iOSJenkins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSJenkins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSJenkins/Pods-iOSJenkins.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +119,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A443653225C6A040092CB63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -112,6 +135,7 @@
 				0A13FC2821EDAA01004636EB /* iOSJenkins */,
 				0A13FC4121EDAA02004636EB /* iOSJenkinsTests */,
 				0A13FC4C21EDAA02004636EB /* iOSJenkinsUITests */,
+				0A443657225C6A050092CB63 /* shareExtension */,
 				0A13FC2721EDAA01004636EB /* Products */,
 				47D65C6C7FA02314564F0430 /* Pods */,
 				18B4C947174A02C746BED0C3 /* Frameworks */,
@@ -124,6 +148,7 @@
 				0A13FC2621EDAA01004636EB /* iOSJenkins.app */,
 				0A13FC3E21EDAA02004636EB /* iOSJenkinsTests.xctest */,
 				0A13FC4921EDAA02004636EB /* iOSJenkinsUITests.xctest */,
+				0A443656225C6A040092CB63 /* shareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +185,17 @@
 				0A13FC4F21EDAA02004636EB /* Info.plist */,
 			);
 			path = iOSJenkinsUITests;
+			sourceTree = "<group>";
+		};
+		0A443657225C6A050092CB63 /* shareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				0A443658225C6A050092CB63 /* ShareViewController.h */,
+				0A443659225C6A050092CB63 /* ShareViewController.m */,
+				0A44365B225C6A050092CB63 /* MainInterface.storyboard */,
+				0A44365E225C6A050092CB63 /* Info.plist */,
+			);
+			path = shareExtension;
 			sourceTree = "<group>";
 		};
 		18B4C947174A02C746BED0C3 /* Frameworks */ = {
@@ -201,6 +237,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0A443660225C6A050092CB63 /* PBXTargetDependency */,
 			);
 			name = iOSJenkins;
 			productName = iOSJenkins;
@@ -245,6 +282,23 @@
 			productReference = 0A13FC4921EDAA02004636EB /* iOSJenkinsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		0A443655225C6A040092CB63 /* shareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A443664225C6A050092CB63 /* Build configuration list for PBXNativeTarget "shareExtension" */;
+			buildPhases = (
+				0A443652225C6A040092CB63 /* Sources */,
+				0A443653225C6A040092CB63 /* Frameworks */,
+				0A443654225C6A040092CB63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = shareExtension;
+			productName = shareExtension;
+			productReference = 0A443656225C6A040092CB63 /* shareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -265,6 +319,9 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 0A13FC2521EDAA01004636EB;
 					};
+					0A443655225C6A040092CB63 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 				};
 			};
 			buildConfigurationList = 0A13FC2121EDAA01004636EB /* Build configuration list for PBXProject "iOSJenkins" */;
@@ -283,6 +340,7 @@
 				0A13FC2521EDAA01004636EB /* iOSJenkins */,
 				0A13FC3D21EDAA02004636EB /* iOSJenkinsTests */,
 				0A13FC4821EDAA02004636EB /* iOSJenkinsUITests */,
+				0A443655225C6A040092CB63 /* shareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -309,6 +367,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A443654225C6A040092CB63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A44365D225C6A050092CB63 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +464,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A443652225C6A040092CB63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A44365A225C6A050092CB63 /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -410,6 +484,11 @@
 			isa = PBXTargetDependency;
 			target = 0A13FC2521EDAA01004636EB /* iOSJenkins */;
 			targetProxy = 0A13FC4A21EDAA02004636EB /* PBXContainerItemProxy */;
+		};
+		0A443660225C6A050092CB63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A443655225C6A040092CB63 /* shareExtension */;
+			targetProxy = 0A44365F225C6A050092CB63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -428,6 +507,14 @@
 				0A13FC3521EDAA02004636EB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0A44365B225C6A050092CB63 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A44365C225C6A050092CB63 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -552,7 +639,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 294Q8452TK;
 				INFOPLIST_FILE = iOSJenkins/Info.plist;
@@ -575,7 +662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSJenkins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -672,6 +759,48 @@
 			};
 			name = Release;
 		};
+		0A443662225C6A050092CB63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 294Q8452TK;
+				INFOPLIST_FILE = shareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.6rooms.www.testBugly.shareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.6rooms.www.testBugly.shareExtension";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A443663225C6A050092CB63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = shareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.6rooms.www.testBugly.shareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -707,6 +836,15 @@
 			buildConfigurations = (
 				0A13FC5921EDAA02004636EB /* Debug */,
 				0A13FC5A21EDAA02004636EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A443664225C6A050092CB63 /* Build configuration list for PBXNativeTarget "shareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A443662225C6A050092CB63 /* Debug */,
+				0A443663225C6A050092CB63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
