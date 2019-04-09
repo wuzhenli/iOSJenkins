@@ -20,18 +20,52 @@ default_platform(:ios)
 platform :ios do
 
   desc "Description of what the lane does"
+  lane :createIPA  do
+    # build your iOS app
+#  clean_build_artifacts # Delete the local dSYM files
+#  clear_derived_data . #Delete existing derived data
+  
+  export_method = 'development'
+  match(type: export_method, app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"])
+#  match(type: export_method, readonly: true, verbose: true)
+  gym(
+      scheme: ENV['SCHEME'],  #{}"iOSConsumerApp-TH",
+      export_method:export_method,         #development, "app-store",   #"ad-hoc",
+      # export_xcargs: "-allowProvisioningUpdates",
+      output_directory:"./build", #输出的位置
+      include_bitcode: false,
+      export_options: {
+        uploadBitcode: false,
+        uploadSymbols: false,
+        compileBitcode: false,
+        output_directory:"./build", #输出的位置
+          xcargs: "-allowProvisioningUpdates",
+          export_options: {
+            provisioningProfiles: {
+                ENV['BUNDLE_IDENTIFIER'] => ENV['PROVISION_NAME_ADHOC'] #ENV['PROVISION_NAME_APPSTORE']
+            }
+          }
+      }
+  )
+  end
+
+
+  desc "Description of what the lane does"
   lane :beta do  #函数名称，执行打包的时候使用
-	  ProjectName = 'iOSJenkins' # 项目名称
+	  ProjectName = ENV['SCHEME'] # 项目名称 'iOSJenkins'
 
   	# Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
     export_method = 'development'
-    scheme = ProjectName #项目名称  debug :testBugly  release : testBuglyRelease
+    scheme = ProjectName  #项目名称  debug :testBugly  release : testBuglyRelease
     # The configuration to use when building the app. Defaults to 'Release'
     configuration = 'Debug' #模式，默认Release，还有Debug
 
 
 	  time = Time.new.strftime("%Y%m%d") #获取时间格式
-    version = get_version_number#获取版本号
+    version = get_version_number( #获取版本号
+      xcodeproj: "#{ProjectName}.xcodeproj",
+      target: ProjectName
+    )
     auto_increment_build_number = increment_build_number # 自动增加 build 号 + 1
 	  build_number = auto_increment_build_number # get_build_number(xcodeproj: "#{ProjectName}.xcodeproj")
 	  # puts 输出日志到终端, 并且指定颜色
@@ -61,8 +95,9 @@ platform :ios do
     # )
 
     #, keychain_password: ""
-    match(type: export_method, readonly: true, verbose: true)
-  puts "**************************   before build ***********************"
+    #match(type: export_method, readonly: true, verbose: true)
+    match(type: export_method, app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"], verbose: true)
+    puts "**************************   before build ***********************"
     gym( # alias for "build_ios_app"
        scheme:scheme, 
        export_method:export_method,#打包的类型
@@ -72,7 +107,7 @@ platform :ios do
         xcargs: "-allowProvisioningUpdates",
         export_options: {
           provisioningProfiles: { 
-              "#{bundle_id}" => "iOSJenkins"
+              ENV['BUNDLE_IDENTIFIER'] => ENV['PROVISION_NAME_ADHOC'] #ENV['PROVISION_NAME_APPSTORE']
           }
         }
      )
