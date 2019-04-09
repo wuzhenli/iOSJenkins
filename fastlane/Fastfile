@@ -36,7 +36,7 @@ platform :ios do
 	  build_number = auto_increment_build_number # get_build_number(xcodeproj: "#{ProjectName}.xcodeproj")
 	  # puts 输出日志到终端, 并且指定颜色
 	  puts "************   auto_increment_build_number:#{auto_increment_build_number}  fileBuildNum:#{build_number}".yellow
-    ipaName = "#{configuration}_#{version}_#{build_number}_#{time}.ipa"
+    ipaName = "#{configuration}_#{time}_#{version}_#{build_number}.ipa"
 
     
     work_path = File.expand_path("..", Dir.pwd)
