@@ -95,8 +95,8 @@ platform :ios do
     # )
 
     #, keychain_password: ""
-    #match(type: export_method, readonly: true, verbose: true)
-    match(type: export_method, app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"], verbose: true)
+    match(type: export_method, readonly: true, verbose: true)
+#    match(type: export_method, app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"], verbose: true)
     puts "**************************   before build ***********************"
     gym( # alias for "build_ios_app"
        scheme:scheme, 
