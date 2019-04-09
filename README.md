@@ -17,3 +17,31 @@ ERROR [2019-04-09 15:27:06.51]: No such file or directory @ rb_sysopen - /Users/
 
 - [JianShu Jenkins+cocoapods+Bugly自动打包配置教程](https://www.jianshu.com/p/6ea18e8cc048)
 - [Cocoapods 镜像](https://blog.csdn.net/guo405240393/article/details/80319520)
+
+
+###  Exit status: 1[0m
+```
+from /usr/local/bin/xcpretty:23:in `<main>'
+ERROR [2019-04-09 17:51:31.23]: [31mExit status: 1[0m
+ERROR [2019-04-09 17:51:31.23]: [31mYour shell environment is not correctly configured[0m
+ERROR [2019-04-09 17:51:31.23]: [31mInstead of UTF-8 your shell uses US-ASCII[0m
+ERROR [2019-04-09 17:51:31.23]: [31mPlease add the following to your '~/.bashrc':[0m
+ERROR [2019-04-09 17:51:31.23]: 
+ERROR [2019-04-09 17:51:31.23]: [31m       export LANG=en_US.UTF-8[0m
+ERROR [2019-04-09 17:51:31.23]: [31m       export LANGUAGE=en_US.UTF-8[0m
+ERROR [2019-04-09 17:51:31.23]: [31m       export LC_ALL=en_US.UTF-8[0m
+ERROR [2019-04-09 17:51:31.23]: 
+ERROR [2019-04-09 17:51:31.23]: [31mYou'll have to restart your shell session after updating the file.[0m
+ERROR [2019-04-09 17:51:31.23]: [31mIf you are using zshell or another shell, make sure to edit the correct bash file.[0m
+ERROR [2019-04-09 17:51:31.23]: [31mFor more information visit this stackoverflow answer:[0m
+ERROR [2019-04-09 17:51:31.23]: [31mhttps://stackoverflow.com/a/17031697/445598[0m
+```
+
+解决方案：Jenkins - build 添加：
+
+```
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+```
