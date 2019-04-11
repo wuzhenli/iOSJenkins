@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) UILabel *lblEnv;
 
 @end
 
@@ -25,6 +26,14 @@
     NSLog(@"success");
     NSLog(@"+++");
     self.label.text = @"3月18日第一次提交，第二次提交，第三次提交";
+    self.lblEnv = [self.view viewWithTag:10];
+    
+#if DEBUG
+    self.lblEnv.text = @"Debug";
+#else
+    self.lblEnv.text = @"Release";
+#endif
+    
 }
 
 
