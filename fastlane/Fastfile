@@ -100,11 +100,11 @@ platform :ios do
     puts "bunlle ID:#{bundle_id}".red
   
     # match(type: export_method, readonly: true, verbose: true)
-    match( # appstore, adhoc, development, enterprise
-      type: "adhoc", 
-      app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"],
-      verbose: true
-    )
+#    match( # appstore, adhoc, development, enterprise
+#      type: "adhoc", 
+#      app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"],
+#      verbose: true
+#    )
 
     puts "**************************   before build ***********************"
     gym( # alias for "build_ios_app"
@@ -114,11 +114,11 @@ platform :ios do
        output_name:"#{ipaName}",#输出的包名
        output_directory:"./build", #输出的位置
        xcargs: "-allowProvisioningUpdates",
-        export_options: {
-          provisioningProfiles: { 
-            "#{bundle_id}" => ProjectName
-          }
-        }
+#        export_options: {
+#          provisioningProfiles: { 
+#            "#{bundle_id}" => ProjectName
+#          }
+#        }
      )
     puts "**************************   before upload pyger ***********************"
   	pgyer(api_key: "1e1f953bbbf678c08b2b6446e10e960b", user_key: "db9382b065962e14c7679812178965c1")
