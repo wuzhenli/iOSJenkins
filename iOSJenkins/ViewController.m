@@ -29,9 +29,9 @@
     self.lblEnv = [self.view viewWithTag:10];
     
 #if DEBUG
-    self.lblEnv.text = @"Debug";
+    self.lblEnv.text = @"Debug dev";
 #else
-    self.lblEnv.text = @"Release";
+    self.lblEnv.text = @"Release dev";
 #endif
     
 }
