@@ -70,5 +70,47 @@ platform :ios do
     puts "**************************   before upload pyger ***********************"
   	pgyer(api_key: "1e1f953bbbf678c08b2b6446e10e960b", user_key: "db9382b065962e14c7679812178965c1")
    end
+  
+  desc "线上环境（ad-hoc）"
+  lane :release do  #函数名称，执行打包的时候使用
+	  ProjectName = 'iOSJenkins' #ENV['SCHEME'] # 项目名称 'iOSJenkins'
+  	# app-store, ad-hoc, package, enterprise, development, developer-id
+    export_method = 'ad-hoc'
+    scheme = ProjectName  #项目名称  debug :testBugly  release : testBuglyRelease
+    # The configuration to use when building the app. Defaults to 'Release'
+    configuration = 'Release' #模式，默认 Release，还有Debug
+	  time = Time.new.strftime("%Y%m%d") #获取时间格式
+    version = get_version_number( #获取版本号
+      xcodeproj: "#{ProjectName}.xcodeproj",
+      target: ProjectName
+    )
+    auto_increment_build_number = increment_build_number # 自动增加 build 号 + 1
+	  build_number = auto_increment_build_number # get_build_number(xcodeproj: "#{ProjectName}.xcodeproj")
+	  # puts 输出日志到终端, 并且指定颜色
+	  puts "************   auto_increment_build_number:#{auto_increment_build_number}  fileBuildNum:#{build_number}".yellow
+    ipaName = "#{configuration}_#{time}_#{version}_#{build_number}.ipa"
+
+    
+    work_path = File.expand_path("..", Dir.pwd)
+    puts "dir.pwd:#{Dir.pwd}" # dir.pwd:/Users/li/PrivateText/GitHub-Demo/iOSJenkins/fastlane
+    puts "work_path:#{work_path}" # work_path:/Users/li/PrivateText/GitHub-Demo/iOSJenkins
+    plist_path = "#{work_path}/iOSJenkins/Info.plist"
+
+    bundle_id = get_info_plist_value(path: "#{plist_path}", key: "CFBundleIdentifier")
+    puts "bunlle ID:#{bundle_id}".red
+  
+    # match(type: export_method, readonly: true, verbose: true)
+    puts "**************************   before build ***********************"
+    gym( # alias for "build_ios_app"
+       scheme:scheme, 
+       export_method:export_method,#打包的类型
+       configuration:configuration, 
+       output_name:"#{ipaName}",#输出的包名
+       output_directory:"./build", #输出的位置
+        xcargs: "-allowProvisioningUpdates",
+     )
+    puts "**************************   before upload pyger ***********************"
+  	pgyer(api_key: "1e1f953bbbf678c08b2b6446e10e960b", user_key: "db9382b065962e14c7679812178965c1")
+   end
 
 end
