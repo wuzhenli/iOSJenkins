@@ -103,7 +103,8 @@ platform :ios do
     match( # appstore, adhoc, development, enterprise
       type: "adhoc", 
       app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"],
-      verbose: true
+      verbose: true,
+      readonly: true
     )
 
     puts "**************************   before build ***********************"
