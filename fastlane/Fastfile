@@ -100,8 +100,8 @@ platform :ios do
     puts "bunlle ID:#{bundle_id}".red
   
     # match(type: export_method, readonly: true, verbose: true)
-    match(
-      type: export_method, 
+    match( # appstore, adhoc, development, enterprise
+      type: "adhoc", 
       app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"],
       verbose: true
     )
