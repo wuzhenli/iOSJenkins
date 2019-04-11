@@ -21,6 +21,16 @@ or alternatively using `brew cask install fastlane`
 fastlane ios beta
 ```
 测试环境
+### ios release
+```
+fastlane ios release
+```
+线上环境（ad-hoc）
+### ios createCer
+```
+fastlane ios createCer
+```
+线上环境（ad-hoc）
 
 ----
 
