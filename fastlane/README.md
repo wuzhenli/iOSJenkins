@@ -30,7 +30,7 @@ fastlane ios release
 ```
 fastlane ios createCer
 ```
-线上环境（ad-hoc）
+安装 证书/描述文件
 
 ----
 
