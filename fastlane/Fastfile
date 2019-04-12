@@ -131,8 +131,21 @@ platform :ios do
   	
 
     match( # appstore, adhoc, development, enterprise
+      type: "development", 
+      app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"],
+      readonly: true,
+      verbose: true
+    )
+    match( # appstore, adhoc, development, enterprise
       type: "adhoc", 
       app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"],
+      readonly: true,
+      verbose: true
+    )
+    match( # appstore, adhoc, development, enterprise
+      type: "appstore", 
+      app_identifier: ["com.6rooms.www.testBugly", "com.6rooms.www.testBugly.shareExtension"],
+      readonly: true,
       verbose: true
     )
    end
